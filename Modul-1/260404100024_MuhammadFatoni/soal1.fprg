@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Belanja Udin"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value=""/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="uang,buku,pulpen,flashdisk,total,diskon,setelahDiskon,ppn,bayar,kembalian" type="Real" array="False" size=""/>
+
+            <assign variable="uang" expression="200000"/>
+            <assign variable="buku" expression="3*25000"/>
+            <assign variable="pulpen" expression="2*8000"/>
+            <assign variable="flashdisk" expression="75000"/>
+
+            <assign variable="total" expression="buku+pulpen+flashdisk"/>
+            <assign variable="diskon" expression="total*10/100"/>
+            <assign variable="setelahDiskon" expression="total-diskon"/>
+            <assign variable="ppn" expression="setelahDiskon*11/100"/>
+            <assign variable="bayar" expression="setelahDiskon+ppn"/>
+            <assign variable="kembalian" expression="uang-bayar"/>
+
+            <output expression="&quot;Total harga buku       = Rp&quot; &amp; buku" newline="True"/>
+            <output expression="&quot;Total harga pulpen     = Rp&quot; &amp; pulpen" newline="True"/>
+            <output expression="&quot;Total harga flashdisk  = Rp&quot; &amp; flashdisk" newline="True"/>
+            <output expression="&quot;Total sebelum diskon   = Rp&quot; &amp; total" newline="True"/>
+            <output expression="&quot;Diskon 10%             = Rp&quot; &amp; diskon" newline="True"/>
+            <output expression="&quot;Setelah diskon         = Rp&quot; &amp; setelahDiskon" newline="True"/>
+            <output expression="&quot;PPN 11%                = Rp&quot; &amp; ppn" newline="True"/>
+            <output expression="&quot;Total pembayaran       = Rp&quot; &amp; bayar" newline="True"/>
+            <output expression="&quot;Uang kembalian         = Rp&quot; &amp; kembalian" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
