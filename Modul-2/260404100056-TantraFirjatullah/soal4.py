@@ -1,4 +1,3 @@
-print()
 kodeUser = int(input("Masukkan kode 3 digit: "))
 
 if len(str(kodeUser)) != 3 or kodeUser < 0:

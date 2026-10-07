@@ -7,7 +7,7 @@ suhuR = suhuC / 1.25
 
 if suhuC > 1000:
     if tekanan > 50:
-        statusReaktor = "MELTDOWN! SEGERA EVAKUASI!"     
+        statusReaktor = "MELTDOWN! SEGERA EVAKUASI!"
     else:
         statusReaktor = "Bahaya Suhu: Segera Turunkan Daya!"
 elif suhuC > 500:
@@ -26,4 +26,3 @@ print(f"Suhu berada pada {suhuF}°F")
 print(f"Suhu berada pada {suhuR}°Re")
 print(statusReaktor)
 print(statusPompa)
-

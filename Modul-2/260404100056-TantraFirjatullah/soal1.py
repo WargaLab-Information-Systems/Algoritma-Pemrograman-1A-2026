@@ -14,12 +14,12 @@ if (digit[1] % 2) == 1:
     nPelacakP1 = nPelacakAwal + 25
 else:
     nPelacakP1 = nPelacakAwal - digit[1]
-    
+
 if (nPelacakP1 % 3) == 0:
     nPelacakP2 = nPelacakP1 // 3
 else:
     nPelacakP2 = nPelacakP1 * 2
-    
+
 if nPelacakP2 > 50:
     status = "Kategori A"
 elif nPelacakP2 > 20:
