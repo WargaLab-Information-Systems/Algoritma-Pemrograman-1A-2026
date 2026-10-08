@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.18">
+    <attributes>
+        <attribute name="name" value="Budi - Brankas sKrasny"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value="Program menentukan status sKrasny berdasarkan PIN 3 digit"/>
+        <attribute name="saved" value="2026-10-06 15:04:00"/>
+        <attribute name="created" value="2026-10-06 15:04:00"/>
+        <attribute name="edited" value="2026-10-06 15:04:00"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="kode" type="Integer" array="False" size=""/>
+            <declare name="digit1" type="Integer" array="False" size=""/>
+            <declare name="digit2" type="Integer" array="False" size=""/>
+            <declare name="digit3" type="Integer" array="False" size=""/>
+            <declare name="pelacak" type="Integer" array="False" size=""/>
+            <declare name="pelacakAwal" type="Integer" array="False" size=""/>
+            <declare name="pelacakTahap1" type="Integer" array="False" size=""/>
+            <declare name="nilaiAkhir" type="Integer" array="False" size=""/>
+            <declare name="status" type="String" array="False" size=""/>
+            <declare name="siklus" type="String" array="False" size=""/>
+
+            <input variable="kode" prompt="Masukkan kode rahasia 3 digit: "/>
+
+            <assign variable="digit1" expression="kode / 100"/>
+            <assign variable="digit2" expression="(kode / 10) mod 10"/>
+            <assign variable="digit3" expression="kode mod 10"/>
+
+            <assign variable="pelacak" expression="digit1 * digit3"/>
+            <assign variable="pelacakAwal" expression="pelacak"/>
+
+            <if expression="digit2 mod 2 = 1">
+                <then>
+                    <assign variable="pelacak" expression="pelacak + 25"/>
+                </then>
+                <else>
+                    <assign variable="pelacak" expression="pelacak - digit2"/>
+                </else>
+            </if>
+
+            <assign variable="pelacakTahap1" expression="pelacak"/>
+
+            <if expression="pelacak mod 3 = 0">
+                <then>
+                    <assign variable="pelacak" expression="pelacak / 3"/>
+                </then>
+                <else>
+                    <assign variable="pelacak" expression="pelacak * 2"/>
+                </else>
+            </if>
+
+            <assign variable="nilaiAkhir" expression="pelacak"/>
+
+            <if expression="nilaiAkhir &gt; 50">
+                <then>
+                    <assign variable="status" expression="&quot;Kategori A&quot;"/>
+                </then>
+                <else>
+                    <if expression="nilaiAkhir &gt; 20">
+                        <then>
+                            <assign variable="status" expression="&quot;Kategori B&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="status" expression="&quot;sKrasny Ditolak&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+
+            <if expression="nilaiAkhir mod 2 = 0">
+                <then>
+                    <assign variable="siklus" expression="&quot;Siklus Genap&quot;"/>
+                </then>
+                <else>
+                    <assign variable="siklus" expression="&quot;Siklus Ganjil&quot;"/>
+                </else>
+            </if>
+
+            <output expression="&quot;Digit pertama: &quot; &amp; digit1" newline="True"/>
+            <output expression="&quot;Digit kedua: &quot; &amp; digit2" newline="True"/>
+            <output expression="&quot;Digit ketiga: &quot; &amp; digit3" newline="True"/>
+            <output expression="&quot;Nilai pelacak awal: &quot; &amp; pelacakAwal" newline="True"/>
+            <output expression="&quot;Nilai pelacak tahap pertama: &quot; &amp; pelacakTahap1" newline="True"/>
+            <output expression="&quot;Nilai pelacak tahap kedua (nilai akhir): &quot; &amp; nilaiAkhir" newline="True"/>
+            <output expression="&quot;Status sKrasny: &quot; &amp; status" newline="True"/>
+            <output expression="siklus" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
