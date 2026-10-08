@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Perhitungan Belanja Udin"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value="Menghitung total belanja, diskon 10%, PPN 11%, dan kembalian Udin."/>
+        <attribute name="saved" value="2026-09-29 01:51:25 AM"/>
+        <attribute name="created" value="SFA7U0lSQVJESEFOOzIwMjYtMDktMjg7MDk6MzM6NTAgUE07MjExMw=="/>
+        <attribute name="edited" value="SFA7U0lSQVJESEFOOzIwMjYtMDktMjk7MDE6NTE6MjUgQU07MTsyMjAx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hargaBuku, totalBuku, hargaPulpen, totalPulpen, hargaFlashdisk, totalFlashdisk, totalSebelumDiskon, diskon, setelahDiskon, ppn, totalBayar, uangTunai, kembalian" type="Real" array="False" size=""/>
+            <declare name="jumlahBuku, jumlahPulpen, jumlahFlashdisk" type="Integer" array="False" size=""/>
+            <assign variable="hargaBuku" expression="25000"/>
+            <assign variable="jumlahBuku" expression="3"/>
+            <assign variable="totalBuku" expression="hargaBuku * jumlahBuku"/>
+            <assign variable="hargaPulpen" expression="8000"/>
+            <assign variable="jumlahPulpen" expression="2"/>
+            <assign variable="totalPulpen" expression="hargaPulpen * jumlahPulpen"/>
+            <assign variable="hargaFlashdisk" expression="75000"/>
+            <assign variable="jumlahFlashdisk" expression="1"/>
+            <assign variable="totalFlashdisk" expression="hargaFlashdisk * jumlahFlashdisk"/>
+            <assign variable="totalSebelumDiskon" expression="totalBuku + totalPulpen + totalFlashdisk"/>
+            <assign variable="diskon" expression="totalSebelumDiskon * 10 / 100"/>
+            <assign variable="setelahDiskon" expression="totalSebelumDiskon - diskon"/>
+            <assign variable="ppn" expression="setelahDiskon * 11 / 100"/>
+            <assign variable="totalBayar" expression="setelahDiskon + ppn"/>
+            <assign variable="uangTunai" expression="200000"/>
+            <assign variable="kembalian" expression="uangTunai - totalBayar"/>
+            <output expression="&quot;a) Total harga buku = Rp&quot; &amp; totalBuku" newline="True"/>
+            <output expression="&quot;b) Total harga pulpen = Rp&quot; &amp; totalPulpen" newline="True"/>
+            <output expression="&quot;c) Total harga flashdisk = Rp&quot; &amp; totalFlashdisk" newline="True"/>
+            <output expression="&quot;d) Total harga seluruh barang sebelum diskon = Rp&quot; &amp; totalSebelumDiskon" newline="True"/>
+            <output expression="&quot;e) Besarnya diskon 10% = Rp&quot; &amp; diskon" newline="True"/>
+            <output expression="&quot;f) Harga barang setelah diskon = Rp&quot; &amp; setelahDiskon" newline="True"/>
+            <output expression="&quot;g) Besarnya PPN 11% = Rp&quot; &amp; ppn" newline="True"/>
+            <output expression="&quot;h) Total pembayaran setelah pajak = Rp&quot; &amp; totalBayar" newline="True"/>
+            <output expression="&quot;i) Uang kembalian = Rp&quot; &amp; kembalian" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
