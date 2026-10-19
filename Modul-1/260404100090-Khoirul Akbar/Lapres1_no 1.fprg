@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="no 1"/>
+        <attribute name="authors" value="Khoirul Akbar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-01 09:32:21 PM"/>
+        <attribute name="created" value="S2hvaXJ1bCBBa2JhcjtMQVBUT1AtVEpGUkFGUU87MjAyNi0wOS0yNzswMToyNDo1MiBQTTszNjQ3"/>
+        <attribute name="edited" value="S2hvaXJ1bCBBa2JhcjtMQVBUT1AtVEpGUkFGUU87MjAyNi0xMC0wMTswOTozMjoyMSBQTTs0OzM3NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="saldoAwal, hargaBuku, hargaBulpen, totalHargaBuku, totalHargaBulpen, totalHargaFlashdisk, totalHargaSemua, ppn, totalPembayaran, kembalian" type="Real" array="False" size=""/>
+            <assign variable="saldoAwal" expression="2*100000"/>
+            <assign variable="hargaBuku" expression="25000"/>
+            <assign variable="hargaBulpen" expression="8000"/>
+            <assign variable="totalHargaBuku" expression="3*hargaBuku"/>
+            <assign variable="totalHargaBulpen" expression="2*hargaBulpen"/>
+            <assign variable="totalHargaFlashdisk" expression="1*75000"/>
+            <assign variable="totalHargaSemua" expression="totalHargaBuku+&#13;&#10;totalHargaBulpen+&#13;&#10;totalHargaflashdisk"/>
+            <assign variable="ppn" expression="totalHargaSemua*11/100"/>
+            <assign variable="totalPembayaran" expression="totalHargaSemua+ppn"/>
+            <assign variable="kembalian" expression="saldoAwal-totalPembayaran"/>
+            <output expression="&quot; Total harga buku: &quot; &amp;totalHargaBuku&amp;&#13;&#10;&quot; Total harga bulpen: &quot; &amp;totalHargaBulpen&amp;&#13;&#10;&quot; Total harga flashdisk: &quot;&amp;totalHargaFlashdisk&amp;&#13;&#10;&quot; Total harga semua: &quot;&amp;totalHargaSemua&amp;&#13;&#10;&quot; ppn: &quot;&amp;ppn&amp;&#13;&#10;&quot; Total pembayaran: &quot;&amp;totalPembayaran&amp;&#13;&#10;&quot; Kembalian: &quot;&amp;kembalian" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
